@@ -16,5 +16,5 @@ app.use('/api', require('./Routes/Createuser'));
 app.use('/api', require('./Routes/Displaydata'));
 app.use('/api', require('./Routes/OrdersData'));
 app.listen(port, () => {
-  console.log(`Food app listening on http:localhost:// ${port}`)
+  console.log(`Food app listening on {process.env.REACT_APP_BASE_URL}:${port}`)
 })

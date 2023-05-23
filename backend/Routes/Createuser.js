@@ -4,7 +4,7 @@ const User = require('../models/User')
 const { body, validationResult } = require('express-validator');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const Jwt_secret = "jwtSecret";
+const Jwt_secret = process.env.REACT_APP_JWT_SECRET;
 
 
 //code to signUp the user
@@ -35,16 +35,16 @@ routes.post('/Createuser', [
 routes.post('/loginUser', [
     body('email', 'Enter a valid Email').isEmail(),
     body('password', 'please set a valid password').isLength({ min: 5 })], async (req, res) => {
-        let success=false;
+        let success = false;
         const result = validationResult(req);
         if (!result.isEmpty()) {
             return res.status(400).json({ result: result.array() });
         }
         let user = req.body.email;
         try {
-            let User_Data = await User.findOne({ email:user });
+            let User_Data = await User.findOne({ email: user });
             if (!User_Data)
-                return res.status(400).json({success, error: "User Not found" });
+                return res.status(400).json({ success, error: "User Not found" });
 
             const comPass = await bcrypt.compare(req.body.password, User_Data.password);
             if (!comPass) {
