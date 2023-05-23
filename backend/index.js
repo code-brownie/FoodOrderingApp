@@ -5,9 +5,9 @@ const app = express()
 const port = 5000
 const mongoDB = require('./db');
 mongoDB();
-app.use(cors({credentials:true,origin:"http://localhost:3000"}))
+app.use(cors({credentials:true,origin:"https://foodapp12345.onrender.com"}))
 // app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//   res.setHeader("Access-Control-Allow-Origin", "https://foodapp12345.onrender.com);
 //   res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept");
 //   next();
 // })
