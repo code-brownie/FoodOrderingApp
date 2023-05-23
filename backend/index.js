@@ -7,7 +7,7 @@ const mongoDB = require('./db');
 mongoDB();
 
 const corsOptions = {
-  origin: 'https://foodapp-yp71.onrender.com',
+  origin: 'https://marvelous-moonbeam-3e3a9f.netlify.app/',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
