@@ -7,7 +7,7 @@ const mongoDB = require('./db');
 mongoDB();
 
 const corsOptions = {
-  origin: 'https://646d05715d8b09351d5641d0--marvelous-moonbeam-3e3a9f.netlify.app//',
+  origin: 'https://646d05715d8b09351d5641d0--marvelous-moonbeam-3e3a9f.netlify.app',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
